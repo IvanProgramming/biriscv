@@ -1,0 +1,30 @@
+{
+    "name": "Ubuntu SystemC DevContainer",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": "."
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "zsh"
+    },
+    "postCreateCommand": "chsh -s $(which zsh) && echo 'Dev container ready!'",
+    "remoteUser": "root",
+    "features": {
+      "ghcr.io/devcontainers/features/git:1": {},
+      "ghcr.io/devcontainers/features/zsh:1": {}
+    },
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "workspaceFolder": "/workspace",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-vscode.cpptools",
+          "ms-python.python",
+          "ms-azuretools.vscode-docker"
+        ]
+      }
+    }
+  }
+  
