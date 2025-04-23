@@ -6,3 +6,7 @@ RUN mkdir -p /opt && cd /opt && wget https://github.com/accellera-official/syste
 ENV SYSTEMC_HOME=/opt/systemc-3.0.1
 ENV LD_LIBRARY_PATH=/opt/systemc-3.0.1/lib-linux64
 ENV VERILATOR_SRC=/home/verilator/include
+RUN wget https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
+RUN mkdir /opt/riscv
+RUN tar -xzf TOOLCHAIN.tar.gz -C /opt/riscv/
+RUN export PATH=$PATH:/opt/riscv/bin
